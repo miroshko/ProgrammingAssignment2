@@ -49,7 +49,7 @@ sampleMatrix <- matrix(runif(1000000, 0, 100), 1000, 1000)
 sampleCacheMatrix = makeCacheMatrix(sampleMatrix)
 #
 # perform inversion on the same data 2 times and measure time of both calls
-# should take long
+# should take long, ~ 8 sec on my PC
 ptm <- proc.time()
 solved <- cacheSolve(sampleCacheMatrix)
 diff <- proc.time() - ptm
