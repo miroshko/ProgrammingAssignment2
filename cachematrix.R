@@ -39,26 +39,26 @@ cacheSolve <- function(x, ...) {
         m
 }
 
-# Aample usage:
-# 
-# creating a 1000 x 1000 random matrix.
-# (There is though a slight chance that a random matrix is irrevertible, in this case just repeat) 
-sampleMatrix <- matrix(runif(1000000, 0, 100), 1000, 1000)
+## Sample usage:
+## 
+## creating a 1000 x 1000 random matrix.
+## (There is though a slight chance that a random matrix is irrevertible, in this case just repeat) 
+#sampleMatrix <- matrix(runif(1000000, 0, 100), 1000, 1000)
+##
+## preparing the matrix for cacheSolve
+#sampleCacheMatrix = makeCacheMatrix(sampleMatrix)
+##
+## perform inversion on the same data 2 times and measure time of both calls
+## should take long, ~ 8 sec on my PC
+#ptm <- proc.time()
+#solved <- cacheSolve(sampleCacheMatrix)
+#diff <- proc.time() - ptm
 #
-# preparing the matrix for cacheSolve
-sampleCacheMatrix = makeCacheMatrix(sampleMatrix)
+#print(diff['elapsed'])
 #
-# perform inversion on the same data 2 times and measure time of both calls
-# should take long, ~ 8 sec on my PC
-ptm <- proc.time()
-solved <- cacheSolve(sampleCacheMatrix)
-diff <- proc.time() - ptm
-
-print(diff['elapsed'])
-
-# should take less
-ptm <- proc.time()
-solved <- cacheSolve(sampleCacheMatrix)
-diff <- proc.time() - ptm
-
-print(diff['elapsed'])
+## should take less
+#ptm <- proc.time()
+#solved <- cacheSolve(sampleCacheMatrix)
+#diff <- proc.time() - ptm
+#
+#print(diff['elapsed'])
