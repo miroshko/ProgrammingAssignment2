@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
         # initializing
         solution <- NULL
 
-        # set a new matrix to the existing data structure
+        # function for setting a new matrix to the existing data structure
         setMatrix <- function(y) {
                 # with <<- we access the x from the upper scope (makeCacheMatrix)
                 x <<- y
